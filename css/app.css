@@ -15,6 +15,8 @@ body {
 html {
   /* formula: 1 rem = 10px; 10px/16px = 62.5% */
   font-size: 62.5%;
+
+
 }
 
 /* Typography ================================================*/
@@ -123,7 +125,6 @@ html {
 
 /* The cube - where the fun begins :) ===========================*/
 
-
 /* The cube outer container */
 .cube {
    height: 20rem;
@@ -142,7 +143,7 @@ html {
   width: 100%;
 }
 
-/* This will target every single side of the cubez */
+/* This will target every single side of the cubes */
 .cube__face {
   align-items: center;
   background-color: #eee;
@@ -170,6 +171,112 @@ html {
   min-height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+/* Responsive ============================================================*/
+
+/* Tablet */
+@media only screen and (max-width: 48em) {
+
+  /* CSS Reset */
+
+  html {
+    font-size: 56.25%;
+  }
+
+  /* Typography */
+
+  /* Signup heading */
+  .main-heading {
+    width: 100%;
+  }
+
+  /* Layout */
+
+  .main {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  /* Signup section (on left side) */
+  .signup-section {
+    height: 100%;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Container for heading, text, and button  */
+  .signup-box {
+    height: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  /* Showbox cube section (on right side) */
+  .cube__section {
+    height: 100vh;
+    width: 100%;
+  } 
+}
+
+/* Mobile */
+@media only screen and (max-width: 22.5em) {
+ 
+  /* Layout */
+  
+  html {
+    font-size: 50%;
+  }
+
+  /* Layout */
+
+  /* Signup section (on left side) */
+  .signup-section {
+    height: 100%;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Container for heading, text, and button  */
+  .signup-box {
+    height: 100%;
+    padding: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  /* Showbox cube section (on right side) */
+  .cube__section {
+    height: 60vh;
+    width: 100%;
+  } 
+
+  /* The cube outer container */
+  .cube {
+    height: 15rem;
+    perspective: 60rem;
+    width: 15rem;
+  }
+
+  /* The cube's inner container */
+  .cube__container {
+    transform: translateZ(-7.5rem);
+  }
+
+  /* This will target every single side of the cubes */
+  .cube__face {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  /* This will target an individual side of the cube */
+  .cube__face--front { transform: rotateY(0deg) translateZ(7.5rem); }
+  .cube__face--back { transform: rotateY(180deg) translateZ(7.5rem); }
+  .cube__face--left { transform: rotateY(-90deg) translateZ(7.5rem); }
+  .cube__face--right { transform: rotateY(90deg) translateZ(7.5rem); }
+  .cube__face--top { transform: rotateX(90deg) translateZ(7.5rem); }
+  .cube__face--bottom { transform: rotateX(-90deg) translateZ(7.5rem); }
+
 }
 
 /* Animation ============================================================*/
